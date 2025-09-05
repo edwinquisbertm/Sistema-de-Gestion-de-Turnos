@@ -1,9 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq; // Necesario para OrderBy
+
 class Program
 {
 	static void Main(string[] args)
 	{
 		List<string> usuarios = new List<string> { "Ana", "Luis", "Maria", "Juan", "Pedro", "Sofia", "Carlos", "Lucia", "Miguel", "Elena" };
+
+		// Mezclar la lista de usuarios aleatoriamente
+		Random rnd = new Random();
+		usuarios = usuarios.OrderBy(u => rnd.Next()).ToList();
+
 		List<Ticket> tickets = new List<Ticket>();
 		Turnos turnos = new Turnos();
 
